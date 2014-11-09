@@ -37,7 +37,6 @@ alias goshare='cd /mnt/share/'
 # Other alias
 alias du='du -h'
 alias i3lock='i3lock -d -e -i /data/Img/toy_story_that_time_forgot-wide.png'
-alias eclipse='eclipse -data /home/stephwild/computing/code/workspace'
 alias info='info --vi-keys'
 
 # Prompt
