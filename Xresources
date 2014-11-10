@@ -1,0 +1,34 @@
+!-------------------------------!
+!       xterm Resources         !
+!-------------------------------!
+
+! Set TERM env
+xterm*termName: xterm-256color
+
+! Config xterm to utf-8
+xterm*locale: true
+
+! Set how many lines you can scroll
+xterm*saveLines: 4096
+
+! Set toolbar if not set use <SHIFT> + <PAGE UP> / <SHIFT> + <PAGE DOWN>
+xterm*toolbar: true
+
+! Remove black border
+xterm*borderWidth: 0
+
+! Color config
+
+xterm*foreground: white
+xterm*background: black
+
+!xterm*color0: rgb:28/28/28
+
+! begin color0 to color 15 : config 16 terminal colors
+
+!xterm*color15: rgb:b1/c2/d3
+
+! Set font type and size
+
+xterm*faceName: Liberation Mono:size=9:antialias=true
+xterm*font: 7x13
