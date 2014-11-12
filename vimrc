@@ -20,6 +20,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
 
@@ -156,6 +157,11 @@ let g:syntastic_cpp_compiler='clang++'
 " Let syntastic check header
 let g:syntastic_c_check_header=1
 let g:syntastic_cpp_check_header=1
+
+" YouCompleMe Options
+" ===================
+
+let g:ycm_show_diagnostics_ui = 0
 
 " Ultisnips Options
 " =================
