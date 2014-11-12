@@ -6,3 +6,4 @@ For the moment contain only:
 - my personal .emacs
 - my simple bashrc
 - my Xresources
+- my gitconfig

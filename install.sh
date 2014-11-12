@@ -18,4 +18,9 @@ echo "Add Xresources in $HOME"
 cp -v Xresources ~/.Xresources
 echo "Load new Xresources"
 xrdb ~/.Xresources
-echo "Done Xresources"
+echo -e "Done Xresources\n"
+
+# .gitconfig file
+echo "Add gitconfig in $HOME"
+cp -v gitconfig ~/.gitconfig
+echo "Done gitconfig"
