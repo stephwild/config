@@ -184,3 +184,12 @@ autocmd BufNewFile,BufRead *.md setfiletype markdown
 " Forget to gain administrator privileges... This line save you ;)
 " Disallow recursive and nested feature for security purposes
 cnoremap w!! w !sudo tee > /dev/null %
+cnoremap w!!! w! !sudo tee > /dev/null % " Write on RO file
+
+cmap Y y$ " Vim must be logical
+
+" Move in wrapped line by default
+cmap gj j
+cmap gk k
+cmap j gj
+cmap k gk
