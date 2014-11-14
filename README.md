@@ -7,3 +7,4 @@ For the moment contain only:
 - my simple bashrc
 - my Xresources
 - my gitconfig
+- ycm config file (vim plugin)

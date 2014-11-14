@@ -162,6 +162,7 @@ let g:syntastic_cpp_check_header=1
 " ===================
 
 let g:ycm_show_diagnostics_ui = 0
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 " Ultisnips Options
 " =================

@@ -1,6 +1,8 @@
 # .vimrc config file
 echo "Add vimrc in $HOME"
 cp -v vimrc ~/.vimrc
+echo "Add vim config file plugins"
+cp -v ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
 echo -e "Done vimrc\n"
 
 # .emacs config file
