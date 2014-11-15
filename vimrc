@@ -169,6 +169,10 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
 let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
 
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
 " --------------- "
 "  Vim detection  "
 " --------------- "
