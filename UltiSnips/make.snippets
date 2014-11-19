@@ -1,0 +1,29 @@
+snippet bmk "Basic Makefile" bt
+CC= gcc
+CFLAGS= -std=c99 -pedantic -Wall -Wextra -Werror
+CFLAGS+= -g3
+
+NAME_EXEC= ${0:PROGRAM_NAME}
+OBJ= main.o
+
+.PHONY: all clean
+
+all: $(OBJ)
+	$(CC) -o $(EXEC_NAME) $^
+
+clean:
+	rm *.o
+	rm $(EXEC_NAME)
+endsnippet
+
+snippet pmk "Parent Makefile" bt
+CC= gcc
+CFLAGS= -std=c99 -pedantic -Wall -Wextra -Werror
+CFLAGS+= -g3
+
+all:
+	make -C src/ all
+
+clean:
+	make -C src/ clean
+endsnippet

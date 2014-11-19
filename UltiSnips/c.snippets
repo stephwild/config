@@ -1,0 +1,28 @@
+snippet main_void "Main without args" b
+#include <stdio.h>
+
+int main(void)
+{
+    ${0}
+    return 0;
+}
+endsnippet
+snippet main_args "Main with args" b
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+    ${0}
+    return 0;
+}
+endsnippet
+
+snippet main_env "main with environment" b
+#include <stdio.h>
+
+int main(int argc, char *argv[], char *env[])
+{
+    ${0}
+    return 0;
+}
+endsnippet
