@@ -9,11 +9,11 @@ OBJ= main.o
 .PHONY: all clean
 
 all: $(OBJ)
-	$(CC) -o $(EXEC_NAME) $^
+	$(CC) -o $(NAME_EXEC) $^
 
 clean:
 	rm *.o
-	rm $(EXEC_NAME)
+	rm $(NAME_EXEC)
 endsnippet
 
 snippet pmk "Parent Makefile" bt
