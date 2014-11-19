@@ -1,0 +1,14 @@
+global !p
+def filename_to_define(filename):
+    upper = filename.upper()
+    return upper.replace(".", "_")
+endglobal
+
+snippet header
+#ifndef `!p snip.rv = filename_to_define(snip.fn)`
+# define `!p snip.rv = filename_to_define(snip.fn)`
+
+$0
+
+#endif /* !`!p snip.rv = filename_to_define(snip.fn)` */
+endsnippet
