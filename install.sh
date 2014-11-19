@@ -1,28 +1,28 @@
 # .vimrc config file
 echo "Add vimrc in $HOME"
-cp -v vimrc ~/.vimrc
+cp -uv vimrc ~/.vimrc
 echo "Add vim config file plugins"
-cp -v ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
+cp -uv ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
 echo -e "Done vimrc\n"
 
 # .emacs config file
 echo "Add vimrc in $HOME"
-cp -v emacs ~/.emacs
+cp -uv emacs ~/.emacs
 echo -e "Done vimrc\n"
 
 # .bashrc config file
 echo "Add resources in $HOME"
-cp -v bashrc ~/.bashrc
+cp -uv bashrc ~/.bashrc
 echo -e "Done bashrc\n"
 
 # .Xresources config file
 echo "Add Xresources in $HOME"
-cp -v Xresources ~/.Xresources
+cp -uv Xresources ~/.Xresources
 echo "Load new Xresources"
 xrdb ~/.Xresources
 echo -e "Done Xresources\n"
 
 # .gitconfig file
 echo "Add gitconfig in $HOME"
-cp -v gitconfig ~/.gitconfig
+cp -uv gitconfig ~/.gitconfig
 echo "Done gitconfig"
