@@ -20,7 +20,7 @@ if [ ! -d ~/.vim/UltiSnips ]; then
 fi
 
 echo "Add UltiSnips snippets"
-cp -uv UltiSnips/c.snippets UltiSnips/make.snippets ~/.vim/UltiSnips/
+cp -uv UltiSnips/c.snippets UltiSnips/make.snippets UltiSnips/cpp.snippets ~/.vim/UltiSnips/
 
 echo -e "Done vimrc\n"
 
