@@ -2,7 +2,10 @@
 echo "Add vimrc in $HOME"
 cp -uv vimrc ~/.vimrc
 echo "Add vim config file plugins"
+echo "Add YCM semantic completion"
 cp -uv ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
+echo "Add UltiSnips snippets"
+cp -uv UltiSnips/c.snippets UltiSnips/make.snippets ~/.vim/UltiSnips/
 echo -e "Done vimrc\n"
 
 # .emacs config file
