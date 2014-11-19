@@ -55,7 +55,7 @@ set softtabstop=4   " number of space when press tab button
 set shiftwidth=4    " number of space insert automatically for indentation
 
 " comment that respect coding style
-autocmd FileType c,cpp set comments=sl:/*,m:**,ex:*/
+autocmd FileType c,cpp set comments=sl:/*,mb:**,ex:*/
 
 " Search Options
 " ==============
