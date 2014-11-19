@@ -5,7 +5,7 @@ cp -uv vimrc ~/.vimrc
 echo "Add vim plugins config files"
 
 # If .vim directory doesn't exist -> create it
-if [ -d ~/.vim ]; then
+if [ ! -d ~/.vim ]; then
     echo "Create $HOME/.vim directory"
     mkdir ~/.vim
 fi
@@ -14,7 +14,7 @@ echo "Add YCM semantic completion"
 cp -uv ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
 
 # If UltiSnips directory doesn't exist -> create it
-if [ -d ~/.vim/UltiSnips ]; then
+if [ ! -d ~/.vim/UltiSnips ]; then
     echo "Create $HOME/.vim/UltiSnips directory"
     mkdir ~/.vim/UltiSnips
 fi

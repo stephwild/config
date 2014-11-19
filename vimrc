@@ -191,10 +191,10 @@ autocmd BufNewFile,BufRead *.md setfiletype markdown
 cnoremap w!! w !sudo tee > /dev/null %
 cnoremap w!!! w! !sudo tee > /dev/null % " Write on RO file
 
-map Y y$ " Vim must be logical
+noremap Y y$ " Vim must be logical
 
 " Move in wrapped line by default
-map gj j
-map gk k
-map j gj
-map k gk
+noremap gj j
+noremap gk k
+noremap j gj
+noremap k gk
