@@ -1,3 +1,5 @@
+#! /bin/sh
+
 # .vimrc config file
 echo "Add vimrc in $HOME"
 cp -uv vimrc ~/.vimrc
