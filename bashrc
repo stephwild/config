@@ -22,17 +22,25 @@ Color_Off='\e[0m'       # Color Reset
 # Add some mistake tolerance
 alias cd..='cd ..'
 
+# You want Trash functionality like Windows... Use bin not rm
+alias bin='mv -t ~/.Trash'
+
 # Alias for colors
 alias ls='ls -h -F --color=auto'
+alias ll='ls -l -h -F --color=auto'
 alias dmesg='dmesg --color'
 alias grep='grep -i --color=auto'
 
 # Alias for fast going to data partition
-alias gomusic='cd /data/Music/'
-alias godocs='cd /data/Docs/'
-alias goimg='cd /data/Img/'
-alias gofilm='cd /data/Video/'
-alias goshare='cd /mnt/share/'
+alias gomusic='cd /data/Music/ && setxkbmap fr bepo'
+alias godocs='cd /data/Docs/ && setxkbmap fr bepo'
+alias goimg='cd /data/Img/ && setxkbmap fr bepo'
+alias goshare='cd /mnt/share/ && setxkbmap fr bepo'
+
+# Same alias for logic
+alias gofilm='cd /data/Video/ && setxkbmap fr bepo'
+alias govideo='cd /data/Video/ && setxkbmap fr bepo'
+alias gomovie='cd /data/Video/ && setxkbmap fr bepo'
 
 # Other alias
 alias du='du -h'
