@@ -4,18 +4,26 @@
 echo "Add vimrc in $HOME"
 cp -uv vimrc ~/.vimrc
 
+# ftdetect files intend to vim filetype detection
+echo "Add ftdetect directory for vim filetype detection"
+if [ -d ~/.vim/ftdetect ]; then
+    echo "Create $HOME/.vim/ftdetect directory"
+    mkdir -v ~/.vim/ftdetect
+fi
+
+echo "Add ftdetect files"
+cp -uv vim/ftdetect/mardown.vim ~/.vim/ftdetect/
+
 echo "Add vim plugins config files"
 
-# If .vim directory doesn't exist -> create it
 if [ ! -d ~/.vim ]; then
     echo "Create $HOME/.vim directory"
     mkdir -v ~/.vim
 fi
 
 echo "Add YCM semantic completion"
-cp -uv ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
+cp -uv vim/ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
 
-# If UltiSnips directory doesn't exist -> create it
 if [ ! -d ~/.vim/UltiSnips ]; then
     echo "Create $HOME/.vim/UltiSnips directory"
     mkdir -v ~/.vim/UltiSnips
