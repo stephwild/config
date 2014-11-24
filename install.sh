@@ -6,7 +6,7 @@ cp -uv vimrc ~/.vimrc
 
 # ftdetect files intend to vim filetype detection
 echo "Add ftdetect directory for vim filetype detection"
-if [ -d ~/.vim/ftdetect ]; then
+if [ ! -d ~/.vim/ftdetect ]; then
     echo "Create $HOME/.vim/ftdetect directory"
     mkdir -v ~/.vim/ftdetect
 fi
