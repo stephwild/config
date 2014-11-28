@@ -150,6 +150,9 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_error_symbol = ">>"
 let g:syntastic_warning_symbol = "w>"
 
+" Syntastic use python 3
+let g:syntastic_python_python_exe = 'python3'
+
 " Clang compiler for syntastic
 let g:syntastic_c_compiler='clang'
 let g:syntastic_cpp_compiler='clang++'
