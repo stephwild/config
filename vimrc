@@ -157,6 +157,10 @@ let g:syntastic_python_python_exe = 'python3'
 let g:syntastic_c_compiler='clang'
 let g:syntastic_cpp_compiler='clang++'
 
+" Add c/c++ compilation flags for syntastic
+let g:syntastic_c_compiler_options = '-std=c99'
+let g:syntastic_cpp_compiler_options = '-std=c++11'
+
 " Let syntastic check header
 let g:syntastic_c_check_header=1
 let g:syntastic_cpp_check_header=1
@@ -166,7 +170,7 @@ let g:syntastic_cpp_check_header=1
 
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-let g:ycm_autoclose_preview_window_after_completion = 1;
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Ultisnips Options
 " =================
