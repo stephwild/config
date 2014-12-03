@@ -1,6 +1,7 @@
 global !p
 def filename_to_define(filename):
     upper = filename.upper()
+    upper = filename.replace("-", "_")
     return upper.replace(".", "_")
 endglobal
 
