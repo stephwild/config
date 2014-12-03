@@ -1,3 +1,7 @@
+#######################
+#     C Snippets      #
+#######################
+
 snippet bmk "Basic Makefile" bt
 CC= gcc
 CFLAGS= -std=c99 -pedantic -Wall -Wextra -Werror
@@ -26,4 +30,57 @@ all:
 
 clean:
 	make -C src/ clean
+endsnippet
+
+############################
+#       C++ Snippets       #
+############################
+
+snippet bmkpp "Basic Makefile [c++]" bt
+CXX= g++
+CXXFLAGS= -std=c++14 -pedantic -Wall -Wextra -Werror
+CXXFLAGS+= -g3
+
+NAME_EXEC= ${0:PROGRAM_NAME}
+OBJ= main.o
+
+.PHONY: all clean
+
+all: $(OBJ)
+	$(CXX) -o $(NAME_EXEC) $^
+
+clean:
+	rm *.o
+	rm $(NAME_EXEC)
+endsnippet
+
+snippet pmkpp "Parent Makefile [c++]" bt
+CXX= g++
+CXXFLAGS= -std=++14 -pedantic -Wall -Wextra -Werror
+CXXFLAGS+= -g3
+
+all:
+	make -C src/ all
+
+clean:
+	make -C src/ clean
+endsnippet
+
+snippet lmkpp "Make shared library [c++]" bt
+CXX= g++
+CXXFLAGS= -std=++14 -pedantic -Wall -Wextra -Werror -fPIC
+CXXFLAGS+= -g3
+
+LDFLAGS= -shared
+LIBRARY_NAME= ${0:MY_LIBRARY.so}
+
+SRC= main.o
+OBJ= $(addprefix src/, $(SRC))
+
+all: $(OBJ)
+	$(LINK.cc) -o $(LIBRARY_NAME) $^
+
+clean:
+	rm $(OBJ)
+	rm $(LIBRARY_NAME)
 endsnippet
