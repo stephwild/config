@@ -1,15 +1,15 @@
 #! /bin/sh
 
-echo -e "\n=============================="
-echo -e " Launch Config Install Script\t<Stephwild>"
-echo -e "==============================\n"
+echo "\n=============================="
+echo " Launch Config Install Script\t<Stephwild>"
+echo "==============================\n"
 
 
 # .vimrc config file
-echo -e "Add vim files\t$HOME"
-echo -e "-------------\n"
+echo "Add vim files\t$HOME"
+echo "-------------\n"
 
-echo -e "Add vimrc"
+echo "Add vimrc"
 cp -uv vimrc ~/.vimrc
 
 # ftdetect files intend to vim filetype detection
@@ -40,19 +40,19 @@ fi
 echo "Add UltiSnips snippets"
 cp -uv UltiSnips/c.snippets UltiSnips/make.snippets UltiSnips/cpp.snippets ~/.vim/UltiSnips/
 
-echo -e "Done vimrc\n"
+echo "Done vimrc\n"
 
 # .emacs config file
-echo -e "Add emacs files\t$HOME"
-echo -e "---------------\n"
+echo "Add emacs files\t$HOME"
+echo "---------------\n"
 
-echo -e "Add .emacs config file"
+echo "Add .emacs config file"
 cp -uv emacs ~/.emacs
-echo -e "Done .emacs\n"
+echo "Done .emacs\n"
 
 # .bashrc config file
-echo -e "Add bash files\t$HOME"
-echo -e "--------------\n"
+echo "Add bash files\t$HOME"
+echo "--------------\n"
 
 echo "Add bashrc"
 cp -uv bashrc ~/.bashrc
@@ -63,21 +63,21 @@ if [ ! -d ~/.Trash ]; then
     mkdir -v ~/.Trash
 fi
 
-echo -e "Done bashrc\n"
+echo "Done bashrc\n"
 
 # .Xresources config file
-echo -e "Setup X Configuration\t$HOME"
-echo -e "---------------------\n"
+echo "Setup X Configuration\t$HOME"
+echo "---------------------\n"
 
 echo "Add Xresources"
 cp -uv Xresources ~/.Xresources
 echo "Load new Xresources"
 xrdb ~/.Xresources
-echo -e "Done Xresources\n"
+echo "Done Xresources\n"
 
 # .gitconfig file
-echo -e "Setup git Configuration\t$HOME"
-echo -e "----------------------\n"
+echo "Setup git Configuration\t$HOME"
+echo "----------------------\n"
 
 echo "Add gitconfig"
 cp -uv gitconfig ~/.gitconfig
