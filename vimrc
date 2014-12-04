@@ -165,8 +165,8 @@ let g:syntastic_cpp_compiler_options = '-std=c++11'
 let g:syntastic_c_check_header=1
 let g:syntastic_cpp_check_header=1
 
-" YouCompleMe Options
-" ===================
+" YouCompleteMe Options
+" =====================
 
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"

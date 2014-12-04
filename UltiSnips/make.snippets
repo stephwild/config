@@ -2,6 +2,9 @@
 #     C Snippets      #
 #######################
 
+# Make Basic MaKefile
+#--------------------
+
 snippet bmk "Basic Makefile" bt
 CC= gcc
 CFLAGS= -std=c99 -pedantic -Wall -Wextra -Werror
@@ -20,6 +23,9 @@ clean:
 	rm $(NAME_EXEC)
 endsnippet
 
+# Make Parent MaKefile
+#---------------------
+
 snippet pmk "Parent Makefile" bt
 CC= gcc
 CFLAGS= -std=c99 -pedantic -Wall -Wextra -Werror
@@ -32,9 +38,34 @@ clean:
 	make -C src/ clean
 endsnippet
 
+# Make Share library (Library MaKefile)
+#--------------------------------------
+
+snippet lmk "Make shared library [c++]" bt
+CC= gcc
+CFLAGS= -std=c99 -pedantic -Wall -Wextra -Werror
+CFLAGS+= -g3
+
+LDFLAGS= -shared
+LIBRARY_NAME= ${0:MY_LIBRARY.so}
+
+SRC= main.o
+OBJ= $(addprefix src/, $(SRC))
+
+all: $(OBJ)
+	$(LINK.c) -o $(LIBRARY_NAME) $^
+
+clean:
+	rm $(OBJ)
+	rm $(LIBRARY_NAME)
+endsnippet
+
 ############################
 #       C++ Snippets       #
 ############################
+
+# Make Basic MaKefile c++ (Plus Plus)
+#------------------------------------
 
 snippet bmkpp "Basic Makefile [c++]" bt
 CXX= g++
@@ -54,6 +85,9 @@ clean:
 	rm $(NAME_EXEC)
 endsnippet
 
+# Make Parent MaKefile c++ (Plus Plus)
+#-------------------------------------
+
 snippet pmkpp "Parent Makefile [c++]" bt
 CXX= g++
 CXXFLAGS= -std=++14 -pedantic -Wall -Wextra -Werror
@@ -65,6 +99,9 @@ all:
 clean:
 	make -C src/ clean
 endsnippet
+
+# Make shared Library MaKefile c++ (Plus Plus)
+#---------------------------------------------
 
 snippet lmkpp "Make shared library [c++]" bt
 CXX= g++

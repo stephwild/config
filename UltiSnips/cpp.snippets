@@ -1,3 +1,5 @@
+# Python function that create template define
+# (based on filename) that respect Coding Style
 global !p
 def filename_to_define(filename):
     upper = filename.upper()
@@ -12,4 +14,14 @@ snippet header
 $0
 
 #endif /* !`!p snip.rv = filename_to_define(snip.fn)` */
+endsnippet
+
+snippet bmain_void "Basic Main" b
+#include <iostream>
+
+int main(void)
+{
+    ${0}
+    return 0;
+}
 endsnippet
