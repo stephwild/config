@@ -12,7 +12,7 @@ if [ ! -d ~/.vim/ftdetect ]; then
 fi
 
 echo "Add ftdetect files"
-cp -uv vim/ftdetect/mardown.vim ~/.vim/ftdetect/
+cp -uv vim/ftdetect/markdown.vim ~/.vim/ftdetect/
 
 echo "Add vim plugins config files"
 
