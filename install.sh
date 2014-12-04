@@ -1,7 +1,15 @@
 #! /bin/sh
 
+echo -e "\n=============================="
+echo -e " Launch Config Install Script\t<Stephwild>"
+echo -e "==============================\n"
+
+
 # .vimrc config file
-echo "Add vimrc in $HOME"
+echo -e "Add vim files\t$HOME"
+echo -e "-------------\n"
+
+echo -e "Add vimrc"
 cp -uv vimrc ~/.vimrc
 
 # ftdetect files intend to vim filetype detection
@@ -35,12 +43,18 @@ cp -uv UltiSnips/c.snippets UltiSnips/make.snippets UltiSnips/cpp.snippets ~/.vi
 echo -e "Done vimrc\n"
 
 # .emacs config file
-echo "Add .emacs config file in $HOME"
+echo -e "Add emacs files\t$HOME"
+echo -e "---------------\n"
+
+echo -e "Add .emacs config file"
 cp -uv emacs ~/.emacs
 echo -e "Done .emacs\n"
 
 # .bashrc config file
-echo "Add bashrc in $HOME"
+echo -e "Add bash files\t$HOME"
+echo -e "--------------\n"
+
+echo "Add bashrc"
 cp -uv bashrc ~/.bashrc
 
 # Create Trash directory for bin alias
@@ -52,13 +66,19 @@ fi
 echo -e "Done bashrc\n"
 
 # .Xresources config file
-echo "Add Xresources in $HOME"
+echo -e "Setup X Configuration\t$HOME"
+echo -e "---------------------\n"
+
+echo "Add Xresources"
 cp -uv Xresources ~/.Xresources
 echo "Load new Xresources"
 xrdb ~/.Xresources
 echo -e "Done Xresources\n"
 
 # .gitconfig file
-echo "Add gitconfig in $HOME"
+echo -e "Setup git Configuration\t$HOME"
+echo -e "----------------------\n"
+
+echo "Add gitconfig"
 cp -uv gitconfig ~/.gitconfig
 echo "Done gitconfig"
