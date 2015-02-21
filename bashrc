@@ -12,6 +12,16 @@ Red='\e[0;31m'          # Red
 BBlack='\e[1;30m'       # Bold Black
 Color_Off='\e[0m'       # Color Reset
 
+# ------------------ #
+#  Include function  #
+# ------------------ #
+
+FUNCTION_DIR="~/.pretty_script"
+
+if [ ! -f "$FUNCTION_DIR/bin_emulator.sh" ]; then
+    source "$FUNCTION_DIR/bin_emulator.sh"
+fi
+
 # --------------------------------- #
 #  Here, real settings for .bashrc  #
 # --------------------------------- #
@@ -23,7 +33,11 @@ Color_Off='\e[0m'       # Color Reset
 alias cd..='cd ..'
 
 # You want Trash functionality like Windows... Use bin not rm
-alias bin='mv -t ~/.Trash'
+if [ ! -f "$FUNCTION_DIR/bin_emulator.sh" ]; then
+    alias bin='bin_emulator $@'
+else
+    alias bin='mv -t ~/.Trash'
+fi
 
 # Alias for colors
 alias ls='ls -h -F --color=auto'
