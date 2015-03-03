@@ -2,6 +2,8 @@
 #         BASHRC          #
 # ======================= #
 
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
 # ---------------------- #
 #  Human readable color  #
@@ -16,9 +18,9 @@ Color_Off='\e[0m'       # Color Reset
 #  Include function  #
 # ------------------ #
 
-FUNCTION_DIR="~/.pretty_script"
+FUNCTION_DIR=~/.pretty_script
 
-if [ ! -f "$FUNCTION_DIR/bin_emulator.sh" ]; then
+if [ -f "$FUNCTION_DIR/bin_emulator.sh" ]; then
     source "$FUNCTION_DIR/bin_emulator.sh"
 fi
 
@@ -26,14 +28,11 @@ fi
 #  Here, real settings for .bashrc  #
 # --------------------------------- #
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
 # Add some mistake tolerance
 alias cd..='cd ..'
 
 # You want Trash functionality like Windows... Use bin not rm
-if [ ! -f "$FUNCTION_DIR/bin_emulator.sh" ]; then
+if [ -f "$FUNCTION_DIR/bin_emulator.sh" ]; then
     alias bin='bin_emulator $@'
 else
     alias bin='mv -t ~/.Trash'
