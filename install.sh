@@ -8,7 +8,12 @@ function add_title()
 {
     echo
     echo $1
-    echo ${#1}
+
+    for i in `seq 1 $(echo ${#1})`; do
+        echo -n "-"
+    done
+
+    echo
     echo
 }
 
@@ -43,13 +48,13 @@ add_directory ~/.vim/syntax
 cp -v vim/syntax/aasm.vim vim/syntax/tiger.vim ~/.vim/syntax
 
 echo
-echo"# Add YCM semantic completion" # Autocomplete plugin
+echo "# Add YCM semantic completion" # Autocomplete plugin
 echo
 
 cp -v vim/ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
 
 echo
-echo"# Add UltiSnips snippets"  # Snippets plugin
+echo "# Add UltiSnips snippets"  # Snippets plugin
 echo
 
 add_directory ~/.vim/UltiSnips
@@ -84,13 +89,14 @@ add_title "Setup X configuration"
 cp -v Xresources ~/.Xresources
 
 echo
-echo"Load new Xresources"
+echo "Load new Xresources"
 xrdb ~/.Xresources
 
 #=============#
 #    Other
 #=============#
 
+add_title "Other config/setup"
 add_directory ~/.Trash
 
 echo "Config made by stephwild"
