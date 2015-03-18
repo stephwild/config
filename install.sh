@@ -1,92 +1,97 @@
-#! /bin/bash
+#! /bin/sh
 
-echo -e "\n=============================="
-echo -e " Launch Config Install Script\t<Stephwild>"
-echo -e "==============================\n"
+echo "=============================="
+echo " Launch Config Install Script"
+echo "=============================="
 
+function add_title()
+{
+    echo
+    echo $1
+    echo ${#1}
+    echo
+}
 
-# .vimrc config file
-echo -e "Add vim files\t$HOME"
-echo -e "-------------\n"
+function add_directory()
+{
+    if [ ! -d $1 ]; then
+        echo "Create $1 directory"
+        mkdir -p $1
+    fi
+}
 
-echo -e "Add vimrc"
+#==================#
+#     Vim files
+#==================#
+
+add_title "Add vim files"
 cp -v vimrc ~/.vimrc
 
-# ftdetect files intend to vim filetype detection
-echo -e "Add ftdetect directory for vim filetype detection"
-if [ ! -d ~/.vim/ftdetect ]; then
-    echo -e "Create $HOME/.vim/ftdetect directory"
-    mkdir -v ~/.vim/ftdetect
-fi
+echo
+echo "# Add vim ftdetect files" # For filetype detection
+echo
 
-echo -e "Add ftdetect files"
+add_directory ~/.vim/ftdetect
 cp -v vim/ftdetect/markdown.vim ~/.vim/ftdetect/
 cp -v vim/ftdetect/aasm.vim vim/ftdetect/tiger.vim ~/.vim/ftdetect
 
-if [ ! -d ~/.vim/syntax ]; then
-    echo -e "Create $HOME/.vim/syntax directory"
-    mkdir -v ~/.vim/syntax
-fi
+echo
+echo "# Add vim syntax files" # Detect special keywork in files
+echo
+
+add_directory ~/.vim/syntax
 cp -v vim/syntax/aasm.vim vim/syntax/tiger.vim ~/.vim/syntax
 
-echo -e "Add vim plugins config files"
+echo
+echo"# Add YCM semantic completion" # Autocomplete plugin
+echo
 
-if [ ! -d ~/.vim ]; then
-    echo -e "Create $HOME/.vim directory"
-    mkdir -v ~/.vim
-fi
-
-echo -e "Add YCM semantic completion"
 cp -v vim/ycm_extra_conf.py ~/.vim/.ycm_extra_conf.py
 
-if [ ! -d ~/.vim/UltiSnips ]; then
-    echo -e "Create $HOME/.vim/UltiSnips directory"
-    mkdir -v ~/.vim/UltiSnips
-fi
+echo
+echo"# Add UltiSnips snippets"  # Snippets plugin
+echo
 
-
-echo -e "Add UltiSnips snippets"
+add_directory ~/.vim/UltiSnips
 cp -v UltiSnips/c.snippets UltiSnips/make.snippets UltiSnips/cpp.snippets ~/.vim/UltiSnips/
 
-echo -e "Done vimrc\n"
+#=====================#
+#     Emacs files
+#=====================#
 
-# .emacs config file
-echo -e "Add emacs files\t$HOME"
-echo -e "---------------\n"
-
-echo -e "Add .emacs config file"
+add_title "Add emacs files"
 cp -v emacs ~/.emacs
-echo -e "Done .emacs\n"
 
-# .bashrc config file
-echo -e "Add bash files\t$HOME"
-echo -e "--------------\n"
+#====================#
+#     Bash files
+#====================#
 
-echo -e "Add bashrc"
+add_title "Add bash files"
 cp -v bashrc ~/.bashrc
 
-# Create Trash directory for bin alias
-if [ ! -d ~/.Trash ]; then
-    echo -e "Create $HOME/.Trash directory"
-    mkdir -v ~/.Trash
-fi
+#====================#
+#     Git files
+#====================#
 
-echo -e "Done bashrc\n"
-
-# .Xresources config file
-echo -e "Setup X Configuration\t$HOME"
-echo -e "---------------------\n"
-
-echo -e "Add Xresources"
-cp -v Xresources ~/.Xresources
-echo -e "Load new Xresources"
-xrdb ~/.Xresources
-echo -e "Done Xresources\n"
-
-# .gitconfig file
-echo -e "Setup git Configuration\t$HOME"
-echo -e "----------------------\n"
-
-echo -e "Add gitconfig"
+add_title "Add git files"
 cp -v gitconfig ~/.gitconfig
-echo -e "Done gitconfig"
+
+#================#
+#    X files
+#================#
+
+add_title "Setup X configuration"
+cp -v Xresources ~/.Xresources
+
+echo
+echo"Load new Xresources"
+xrdb ~/.Xresources
+
+#=============#
+#    Other
+#=============#
+
+add_directory ~/.Trash
+
+echo "Config made by stephwild"
+echo "Please check 'https;//github.com/stephwild' for more"
