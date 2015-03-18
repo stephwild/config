@@ -58,7 +58,11 @@ alias gomovie='cd /data/Video/ && setxkbmap fr bepo'
 # Other alias
 alias du='du -h'
 alias i3lock='i3lock -d -e -i /data/Img/toy_story_that_time_forgot-wide.png'
+alias manfr='LANGUAGE=fr_FR.UTF-8 man'
 alias info='info --vi-keys'
+
+# No pop-up when using git for ssh passwd
+unset SSH_ASKPASS
 
 # Prompt
 PS1="\[$Red\]\u\[$BBlack\]@\[$BBlack\]\h \[$Yellow\]\w\[$BBlack\] \$\[$Color_Off\] "

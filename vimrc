@@ -91,7 +91,7 @@ set cursorline              " Highlight cursor line
 hi SpecialKey ctermfg=66
 
 " For eol
-hi NonText ctermfg=66 
+hi NonText ctermfg=66
 
 "See better command shell
 hi Question ctermfg=Blue term=bold
@@ -119,14 +119,14 @@ hi User2 ctermfg=lightyellow ctermbg=darkred
 " Special syntastic part of the statusline
 let g:syntastic_stl_format = ' [%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w} Tot: %F #%t]'
 
-set statusline=%1*      " Use User1 define color (right part)
+set statusline=%1*      " Use User1 define color (left part)
 
 "In right order: filename, line, column, nbr line, pourcent (line look), pourcent (windows look), filetype , Modified flag
 set statusline+=%t\ [Curs:\ %l,\ %c\ -\ %p%%]\ [Tot:\ %L]\ [Win\ %P]\ %y\ %m
 
 set statusline+=%*      " Use default StatusLine color (middle part)
 set statusline+=%=      " Pass right part to left part
-set statusline+=%2*     " Use User2 define color (left part)
+set statusline+=%2*     " Use User2 define color (right part)
 
 " In right order: help flag, Prewiew Window Flag, RO flag
 set statusline+=%(\ %h%)%(\ %w%)%(\ %r%)
