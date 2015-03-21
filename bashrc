@@ -64,5 +64,7 @@ alias info='info --vi-keys'
 # No pop-up when using git for ssh passwd
 unset SSH_ASKPASS
 
+PATH=~/.my_script:$PATH
+
 # Prompt
 PS1="\[$Red\]\u\[$BBlack\]@\[$BBlack\]\h \[$Yellow\]\w\[$BBlack\] \$\[$Color_Off\] "
