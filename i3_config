@@ -1,0 +1,380 @@
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango:DejaVu Sans Mono 8
+
+# Note font:
+#
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+#
+# The font is global but you can use a different in bar block by specify it.
+
+# General configuration
+# ---------------------
+
+# More versatile modifier
+set $mod Mod1
+set $float_mod Mod4
+
+# Hold float modifier then:
+#       - left click: you can move floating windows
+#       - right click: you can resize floating windows
+#       - right click + Shift: resize is proportional
+floating_modifier $float_mod
+
+# Default value
+floating_minimum_size 0 x 0
+
+# Unconstrained
+floating_maximum_size -1 x -1
+
+# New workspace by default is h-split
+default_orientation horizontal
+
+# Use the default orientation for new workspace (no tabbed/stacking mode)
+workspace_layout default
+
+# Border with the name of the app
+new_window normal
+new_float normal
+
+# Do not hide borders (see where you are)
+hide_edge_borders none
+
+# Same as 'set mouse=a' in vim
+focus_follows_mouse yes
+
+# Put the mouse on the center of the output during output swiching
+mouse_warping output
+
+# Display only popup of the same app that is in fullscreen mode
+popup_during_fullscreen smart
+
+# Oblige to focus parent to get out of a window container
+force_focus_wrapping yes
+
+# Tap one more to go to last workspace
+workspace_auto_back_and_forth yes
+
+# Let window decoration 500ms in urgent hint color. Then, you can pass in focus color
+force_display_urgency_hint 500 ms
+
+# Default Window decoration color (from official website)
+#
+# focused_inactive mean window where one of its containers is focused
+# indicator color -> color to distinguish between v-split and h-split windows
+# Placeholder color -> windows color when restoring layout (border and indicator ignored)
+#
+# class                 border  backgr. text    indicator
+client.focused          #4c7899 #285577 #ffffff #2e9ef4
+client.focused_inactive #333333 #5f676a #ffffff #484e50
+client.unfocused        #333333 #222222 #888888 #292d2e
+client.urgent           #2f343a #900000 #ffffff #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000
+
+
+# keycode/var memorandom
+# ----------------------
+
+# Main goal of this memorandom:
+#   => Try to make the keycode readable !
+
+# The var are left associated during parsing
+# So, single char var have '__' for differenciation
+
+### Number (switch workspace) ###
+
+set $kc_1 10
+set $kc_2 11
+set $kc_3 12
+set $kc_4 13
+set $kc_5 14
+set $kc_6 15
+set $kc_7 16
+set $kc_8 17
+set $kc_9 18
+set $kc_0 19
+
+### Move around ###
+
+set $kc_left 43
+set $kc_down 44
+set $kc_up 45
+set $kc_right 46
+
+set $kc_arrow_left 113
+set $kc_arrow_down 116
+set $kc_arrow_up 111
+set $kc_arrow_right 114
+
+# Focus parent/child
+set $kc__a 38
+set $kc__g 42
+
+# Change Output (right)
+set $kc__x 53
+
+### Container layout ###
+
+# Tabbed
+set $kc__w 25
+
+# Splitted
+set $kc__e 26
+
+# Stacked
+set $kc__s 39
+
+### Container type ###
+
+# Vertical
+set $kc__v 55
+
+# Horizontal
+set $kc_semicolon 47
+
+### Workspace ###
+
+set $WS1 1:I
+set $WS2 2:II
+set $WS3 3:III
+set $WS4 4:IV
+set $WS5 5:V
+set $WS6 6:VI
+set $WS7 7:VII
+set $WS8 8:VIII
+set $WS9 9:IX
+set $WS0 10:X
+
+### Other ###
+
+set $kc_echap 9
+set $kc_return 36
+set $kc_space 65
+
+# Start Application
+set $kc__d 40
+
+# Fullscreen
+set $kc__f 41
+
+# Reload
+set $kc__o 32
+
+# Restart
+set $kc__r 27
+
+# Kill Window
+set $kc__q 24
+
+# Bindcode/Bindsym
+# ----------------
+
+# start a terminal
+bindcode $mod+$kc_return exec i3-sensible-terminal
+
+# kill focused window
+bindcode $mod+Shift+$kc__q kill
+
+# start dmenu (a program launcher)
+bindcode $mod+$kc__d exec dmenu_run
+
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindcode $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# change focus
+bindcode $mod+$kc_left focus left
+bindcode $mod+$kc_down focus down
+bindcode $mod+$kc_up focus up
+bindcode $mod+$kc_right focus right
+
+# alternatively, you can use the cursor keys
+bindcode $mod+$kc_arrow_left focus left
+bindcode $mod+$kc_arrow_down focus down
+bindcode $mod+$kc_arrow_up focus up
+bindcode $mod+$kc_arrow_right focus right
+
+# move focused window
+bindcode $mod+Shift+$kc_left move left
+bindcode $mod+Shift+$kc_down move down
+bindcode $mod+Shift+$kc_up move up
+bindcode $mod+Shift+$kc_right move right
+
+# alternatively, you can use the cursor keys
+bindcode $mod+Shift+$kc_arrow_left move left
+bindcode $mod+Shift+$kc_arrow_down move down
+bindcode $mod+Shift+$kc_arrow_up move up
+bindcode $mod+Shift+$kc_arrow_right move right
+
+# split in horizontal orientation
+bindcode $mod+$kc_semicolon split h
+
+# split in vertical orientation
+bindcode $mod+$kc__v split v
+
+# enter fullscreen mode for the focused container
+bindcode $mod+$kc__f fullscreen
+
+# change container layout (stacked, tabbed, toggle split)
+bindcode $mod+$kc__s layout stacking
+bindcode $mod+$kc__w layout tabbed
+bindcode $mod+$kc__e layout toggle split
+
+# toggle tiling / floating
+bindcode $mod+Shift+$kc_space floating toggle
+
+# change focus between tiling / floating windows
+bindcode $mod+$kc_space focus mode_toggle
+
+# focus the parent/child container
+bindcode $mod+$kc__a focus parent
+bindcode $mod+$kc__g focus child
+
+# Focus the output right to the current one
+bindcode $mod+$kc__x focus output right
+
+# Move the current workspace to the next output
+bindcode $mod+Shift+$kc__x move workspace to output right
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# switch to workspace
+bindcode $mod+$kc_1 workspace $WS1
+bindcode $mod+$kc_2 workspace $WS2
+bindcode $mod+$kc_3 workspace $WS3
+bindcode $mod+$kc_4 workspace $WS4
+bindcode $mod+$kc_5 workspace $WS5
+bindcode $mod+$kc_6 workspace $WS6
+bindcode $mod+$kc_7 workspace $WS7
+bindcode $mod+$kc_8 workspace $WS8
+bindcode $mod+$kc_9 workspace $WS9
+bindcode $mod+$kc_0 workspace $WS0
+
+# move focused container to workspace
+bindcode $mod+Shift+$kc_1 move container to workspace $WS1
+bindcode $mod+Shift+$kc_2 move container to workspace $WS2
+bindcode $mod+Shift+$kc_3 move container to workspace $WS3
+bindcode $mod+Shift+$kc_4 move container to workspace $WS4
+bindcode $mod+Shift+$kc_5 move container to workspace $WS5
+bindcode $mod+Shift+$kc_6 move container to workspace $WS6
+bindcode $mod+Shift+$kc_7 move container to workspace $WS7
+bindcode $mod+Shift+$kc_8 move container to workspace $WS8
+bindcode $mod+Shift+$kc_9 move container to workspace $WS9
+bindcode $mod+Shift+$kc_0 move container to workspace $WS0
+
+# reload the configuration file
+bindcode $mod+Shift+$kc__o reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindcode $mod+Shift+$kc__r restart
+
+# exit i3 (logs you out of your X session)
+bindcode $mod+Shift+$kc__e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# i3 Mode
+# -------
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # $rstep var precise the step of the resize mode
+        #   - Grow/shrink floating container by $rstep px
+        #   - Grow/shrink tiling container by $rstep ppt
+        set $rstep 1
+
+        bindcode $kc_left       resize shrink width $rstep px or $rstep ppt
+        bindcode $kc_down       resize grow height $rstep px or $rstep ppt
+        bindcode $kc_up         resize shrink height $rstep px or $rstep ppt
+        bindcode $kc_right      resize grow width $rstep px or $rstep ppt
+
+        bindcode $kc_arrow_left        resize shrink width $rstep px or $rstep ppt
+        bindcode $kc_arrow_down        resize grow height $rstep px or $rstep ppt
+        bindcode $kc_arrow_up          resize shrink height $rstep px or $rstep ppt
+        bindcode $kc_arrow_right       resize grow width $rstep px or $rstep ppt
+
+        bindcode $kc_return mode "default"
+        bindcode $kc_echap mode "default"
+}
+
+bindcode $mod+$kc__r mode "resize"
+
+# i3bar block
+# -----------
+
+bar {
+        status_command i3status
+        # OR status_command i3status --config ~/.i3/i3status.conf
+
+        # Status bar at the bottom of the output
+        # Mode = dock -> bar always visible at one edge of the output
+        # position bottom -> specify the edge...
+        mode dock
+        position bottom
+
+        # For the moment, no special command when rolling mouse wheel up or down
+        wheel_up_cmd nop
+        wheel_down_cmd nop
+
+        # Just a ID for this bar instance (if not specified, it will be [bar-0, bar-1, etc...])
+        id main-bar
+
+        # Show icon (like Dropbox icon) in primary output specified below
+        # Run 'xrandr OR xrandr --dryrun' to see them
+        tray_output primary
+
+        # Show workspace button in status bar
+        workspace_buttons yes
+
+        # Workspace button of the form [n]:[NAME] will display only the [NAME]
+        strip_workspace_numbers yes
+
+        # Show mode in Statusbar (like resize)
+        binding_mode_indicator yes
+
+        # This is the default color of i3 (from official website)
+        colors {
+            # General statusbar color option
+            # 'statusline' option stands for the text color of the statusbar
+            background #000000
+            statusline #ffffff
+            separator #666666
+
+            # Color of the workspace buttons
+            # Active mean where the workspace (no button workspace) is visible
+            # colorclass <border> <background> <text>
+            focused_workspace  #4c7899 #285577 #ffffff
+            active_workspace   #333333 #5f676a #ffffff
+            inactive_workspace #333333 #222222 #888888
+            urgent_workspace   #2f343a #900000 #ffffff
+        }
+}
+
+# exec --no-startup-id -> do not put a watch for this particular exec command
+exec --no-startup-id xrandr --output LVDS1 --primary
+
+# i3 log
+# ------
+
+# Enable logging information
+#   - shmlog logging can be dump with i3-dump-log
+exec --no-startup-id shmlog on
+exec --no-startup-id debuglog on
+
+# Final hack
+# ----------
+
+# Volume will be increased by how many when you press Audio keys
+set $pulse_step 1
+
+# PulseAudio keybinding for Sound Up/Down and Mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +$pulse_step% && killall -SIGUSR1 i3status¬
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -$pulse_step% && killall -SIGUSR1 i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-volume 0 0% && killall -SIGUSR1 i3status
