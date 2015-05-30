@@ -1,6 +1,6 @@
 #! /bin/sh
 
-function add_title()
+add_title()
 {
     echo
     echo $1
@@ -15,7 +15,7 @@ function add_title()
     echo
 }
 
-function add_directory()
+add_directory ()
 {
     if [ ! -d $1 ]; then
         echo "Create $1 directory"
@@ -93,6 +93,13 @@ cp -v Xresources ~/.Xresources
 echo
 echo "Load new Xresources"
 xrdb ~/.Xresources
+
+#=============#
+#     i3
+#=============#
+
+add_title "Add i3 files"
+cp -v i3_config ~/.i3/config
 
 #=============#
 #    Other
