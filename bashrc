@@ -50,6 +50,9 @@ alias godocs='cd /data/Docs/ && setxkbmap fr bepo'
 alias goimg='cd /data/Img/ && setxkbmap fr bepo'
 alias goshare='cd /mnt/share/ && setxkbmap fr bepo'
 
+# Return from data partition
+alias ret='cd ~ && setxkbmap us'
+
 # Same alias for logic
 alias gofilm='cd /data/Video/ && setxkbmap fr bepo'
 alias govideo='cd /data/Video/ && setxkbmap fr bepo'
@@ -59,6 +62,7 @@ alias gomovie='cd /data/Video/ && setxkbmap fr bepo'
 alias du='du -h'
 alias i3lock='i3lock -d -e -i /data/Img/toy_story_that_time_forgot-wide.png'
 alias manfr='LANGUAGE=fr_FR.UTF-8 man'
+alias vimr='vim -R'
 alias info='info --vi-keys'
 
 # No pop-up when using git for ssh passwd

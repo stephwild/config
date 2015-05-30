@@ -1,14 +1,12 @@
 #! /bin/sh
 
-echo "=============================="
-echo " Launch Config Install Script"
-echo "=============================="
-
 function add_title()
 {
     echo
     echo $1
 
+    # Add the corresponding underline
+    # number of '-' -> length of the title
     for i in `seq 1 $(echo ${#1})`; do
         echo -n "-"
     done
@@ -24,6 +22,10 @@ function add_directory()
         mkdir -p $1
     fi
 }
+
+echo "=============================="
+echo " Launch Config Install Script"
+echo "=============================="
 
 #==================#
 #     Vim files
@@ -100,4 +102,4 @@ add_title "Other config/setup"
 add_directory ~/.Trash
 
 echo "Config made by stephwild"
-echo "Please check 'https;//github.com/stephwild' for more"
+echo "Please check 'https://github.com/stephwild' for more"

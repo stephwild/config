@@ -150,8 +150,13 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_error_symbol = ">>"
 let g:syntastic_warning_symbol = "w>"
 
-" Syntastic use python 3
-let g:syntastic_python_python_exe = 'python3'
+" Process with python3.4 interpreter
+" let g:syntastic_python_python_exe = '/usr/bin/python3.4'
+
+" Static python3.4 checker
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args = "--ignore=E302,E261,E128,E127,E265,F841"
+
 
 " Clang compiler for syntastic
 let g:syntastic_c_compiler='clang'
@@ -171,6 +176,8 @@ let g:syntastic_cpp_check_header=1
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+let g:EclimCompletionMethod = 'omnifunc' " For JAVA, Eclipse completion engine
 
 " Ultisnips Options
 " =================
