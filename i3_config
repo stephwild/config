@@ -385,3 +385,6 @@ set $pulse_step 1
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +$pulse_step% && killall -SIGUSR1 i3status¬
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -$pulse_step% && killall -SIGUSR1 i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-volume 0 0% && killall -SIGUSR1 i3status
+
+# For taking screen shot
+bindsym Print exec scrot 'screenshot_$wx$h_%d-%m-%Y_%T.png' -e 'mv $f ~/.screenshot'
