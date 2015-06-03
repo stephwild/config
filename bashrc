@@ -65,7 +65,7 @@ alias manfr='LANGUAGE=fr_FR.UTF-8 man'
 alias vimr='vim -R'
 alias info='info --vi-keys'
 
-# No pop-up when using git for ssh passwd with gnome
+# No GNOME pop-up when using git (with ssh)
 unset SSH_ASKPASS
 
 PATH=~/.my_script:$PATH
