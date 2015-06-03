@@ -65,10 +65,13 @@ alias manfr='LANGUAGE=fr_FR.UTF-8 man'
 alias vimr='vim -R'
 alias info='info --vi-keys'
 
-# No pop-up when using git for ssh passwd
+# No pop-up when using git for ssh passwd with gnome
 unset SSH_ASKPASS
 
 PATH=~/.my_script:$PATH
+
+# Default terminal for i3-sensible-terminal (check it in /usr/bin)
+TERMINAL=xterm
 
 # Prompt
 PS1="\[$Red\]\u\[$BBlack\]@\[$BBlack\]\h \[$Yellow\]\w\[$BBlack\] \$\[$Color_Off\] "
