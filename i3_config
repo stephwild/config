@@ -297,10 +297,10 @@ mode "resize" {
         #   - Grow/shrink tiling container by $rstep ppt
         set $rstep 1
 
-        bindcode $kc_left       resize shrink width $rstep px or $rstep ppt
-        bindcode $kc_down       resize grow height $rstep px or $rstep ppt
-        bindcode $kc_up         resize shrink height $rstep px or $rstep ppt
-        bindcode $kc_right      resize grow width $rstep px or $rstep ppt
+        bindcode $kc_right      resize shrink width $rstep px or $rstep ppt
+        bindcode $kc_up         resize grow height $rstep px or $rstep ppt
+        bindcode $kc_down       resize shrink height $rstep px or $rstep ppt
+        bindcode $kc_left       resize grow width $rstep px or $rstep ppt
 
         bindcode $kc_arrow_left        resize shrink width $rstep px or $rstep ppt
         bindcode $kc_arrow_down        resize grow height $rstep px or $rstep ppt
