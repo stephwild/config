@@ -1,0 +1,25 @@
+#! /bin/sh
+
+KEYMAP_DEBUG_FILE=/home/stephwild/.i3/script/debug_keymap
+
+KEYMAP_INFO=$(setxkbmap -print -verbose 10)
+
+KEYMAP_LAYOUT=$(echo "$KEYMAP_INFO" | grep -E "^layout:" \
+    | awk -F : '{print $2}' | tr -d ' ')
+KEYMAP_VARIANT=$(echo "$KEYMAP_INFO" | grep -E "^variant:" \
+    | awk -F : '{print $2}' | tr -d ' ')
+
+if [ -n "$DEBUG_KEYMAP" ]; then
+    echo $KEYMAP_LAYOUT >> $KEYMAP_DEBUG_FILE
+    echo $KEYMAP_VARIANT >> $KEYMAP_DEBUG_FILE
+fi
+
+if [ $KEYMAP_LAYOUT = 'us' ] && [ -z "$KEYMAP_VARIANT" ]; then
+    echo -n us
+elif [ $KEYMAP_LAYOUT = 'fr' ] && [ -z "$KEYMAP_VARIANT" ]; then
+    echo -n fr
+elif [ $KEYMAP_LAYOUT = 'fr' ] && [ "$KEYMAP_VARIANT" = 'bepo' ]; then
+    echo -n bepo
+else
+    echo -n unknow | tee --append $KEYMAP_DEBUG_FILE
+fi

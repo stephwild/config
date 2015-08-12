@@ -1,0 +1,25 @@
+#! /bin/sh
+
+CURRENT_KEYMAP=$(./get_keymap)
+
+if [ $CURRENT_KEYMAP = 'us' ]; then
+    i___=0
+elif [ $CURRENT_KEYMAP = 'bepo' ]; then
+    i___=1
+elif [ $CURRENT_KEYMAP = 'fr' ]; then
+    i___=2
+else
+    setxkbmap us # Default keymap -> us
+    return
+fi
+
+i___=$((($i___ + 1) % 3))
+
+case $i___ in
+    0)
+        setxkbmap us;;
+    1)
+        setxkbmap fr bepo;;
+    2)
+        setxkbmap fr;;
+esac

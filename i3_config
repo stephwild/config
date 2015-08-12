@@ -172,6 +172,9 @@ set $kc__r 27
 # Kill Window
 set $kc__q 24
 
+# Switch keymap
+set $kc__i 31
+
 # Bindcode/Bindsym
 # ----------------
 
@@ -317,7 +320,7 @@ bindcode $mod+$kc__r mode "resize"
 # -----------
 
 bar {
-        status_command i3status
+        status_command i3status | ~/.i3/script/my_i3status.py
         # OR status_command i3status --config ~/.i3/i3status.conf
 
         # Status bar at the bottom of the output
@@ -388,3 +391,6 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-volume 0 0% && killall
 
 # For taking screen shot
 bindsym Print exec scrot 'screenshot_$wx$h_%d-%m-%Y_%T.png' -e 'mv $f ~/.screenshot'
+
+# Keymap switch shortcut
+bindcode $mod+Shift+$kc__i exec ~/.i3/script/switch_keymap && killall -SIGUSR1 i3status
