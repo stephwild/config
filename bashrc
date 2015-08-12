@@ -14,16 +14,6 @@ Red='\e[0;31m'          # Red
 BBlack='\e[1;30m'       # Bold Black
 Color_Off='\e[0m'       # Color Reset
 
-# ------------------ #
-#  Include function  #
-# ------------------ #
-
-FUNCTION_DIR=~/.pretty_script
-
-if [ -f "$FUNCTION_DIR/bin_emulator.sh" ]; then
-    source "$FUNCTION_DIR/bin_emulator.sh"
-fi
-
 # --------------------------------- #
 #  Here, real settings for .bashrc  #
 # --------------------------------- #
@@ -31,17 +21,21 @@ fi
 # Add some mistake tolerance
 alias cd..='cd ..'
 
+SCRIPT_DIR=~/.my_script
+
 # You want Trash functionality like Windows... Use bin not rm
-if [ -f "$FUNCTION_DIR/bin_emulator.sh" ]; then
-    alias bin='bin_emulator $@'
+if [ -f "$SCRIPT_DIR/bin_emulator.sh" ]; then
+    alias bin='bin_emulator.sh $@'
 else
     alias bin='mv -t ~/.Trash'
 fi
 
 # Alias for colors
-alias ls='ls -h -F --color=auto'
-alias ll='ls -l -h -F --color=auto'
-alias dmesg='dmesg --color'
+LS_OPTIONS='-h -F --color=auto'
+alias ls='ls $LS_OPTIONS'
+alias ll='ls -l $LS_OPTIONS'
+
+alias dmesg='dmesg --color=auto'
 alias grep='grep -i --color=auto'
 
 # Alias for fast going to data partition
@@ -65,13 +59,8 @@ alias manfr='LANGUAGE=fr_FR.UTF-8 man'
 alias vimr='vim -R'
 alias info='info --vi-keys'
 
-# No GNOME pop-up when using git (with ssh)
-unset SSH_ASKPASS
-
-PATH=~/.my_script:$PATH
-
-# Default terminal for i3-sensible-terminal (check it in /usr/bin)
-TERMINAL=xterm
+# Set transparency to 20 %, work only if a composite manager is running
+[ -n "$XTERM_VERSION" ] && transset-df -a 0.8 > /dev/null
 
 # Prompt
 PS1="\[$Red\]\u\[$BBlack\]@\[$BBlack\]\h \[$Yellow\]\w\[$BBlack\] \$\[$Color_Off\] "
