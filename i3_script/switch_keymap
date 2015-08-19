@@ -1,6 +1,9 @@
 #! /bin/sh
 
-CURRENT_KEYMAP=$(./get_keymap)
+CURRENT_KEYMAP=$(~/.i3/script/get_keymap)
+
+# Set _debug to a non-null value for i3-nagbar debugging
+_debug=
 
 if [ $CURRENT_KEYMAP = 'us' ]; then
     i___=0
@@ -23,3 +26,7 @@ case $i___ in
     2)
         setxkbmap fr;;
 esac
+
+if [ $_debug ]; then
+    i3-nagbar -m "Current keymap '$CURRENT_KEYMAP' switch to $i___"
+fi

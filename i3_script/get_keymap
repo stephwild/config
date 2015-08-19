@@ -1,15 +1,18 @@
 #! /bin/sh
 
-KEYMAP_DEBUG_FILE=/home/stephwild/.i3/script/debug_keymap
+KEYMAP_DEBUG_FILE=~/.i3/script/debug_keymap
 
 KEYMAP_INFO=$(setxkbmap -print -verbose 10)
+
+# Set _debug to a non-null value for logging keymap in a debug file
+_debug=
 
 KEYMAP_LAYOUT=$(echo "$KEYMAP_INFO" | grep -E "^layout:" \
     | awk -F : '{print $2}' | tr -d ' ')
 KEYMAP_VARIANT=$(echo "$KEYMAP_INFO" | grep -E "^variant:" \
     | awk -F : '{print $2}' | tr -d ' ')
 
-if [ -n "$DEBUG_KEYMAP" ]; then
+if [ $_debug ]; then
     echo $KEYMAP_LAYOUT >> $KEYMAP_DEBUG_FILE
     echo $KEYMAP_VARIANT >> $KEYMAP_DEBUG_FILE
 fi
