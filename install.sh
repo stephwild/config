@@ -33,6 +33,7 @@ echo "=============================="
 
 add_title "Add vim files"
 cp -v vimrc ~/.vimrc
+mkdir -p ~/.vim/swp ~/.vim/backup
 
 echo
 echo "# Add vim ftdetect files" # For filetype detection
