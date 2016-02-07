@@ -1,0 +1,2 @@
+! Remap Menu key to Super_R (unix equivalent of windows key)
+keycode 135 = Super_R NoSymbol Super_R

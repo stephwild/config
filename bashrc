@@ -59,8 +59,11 @@ alias manfr='LANGUAGE=fr_FR.UTF-8 man'
 alias vimr='vim -R'
 alias info='info --vi-keys'
 
+function func_append { echo "$1" >> "$2"; }
+alias append='func_append $@'
+
 # Set transparency to 20 %, work only if a composite manager is running
-[ -n "$XTERM_VERSION" ] && transset-df -a 0.8 > /dev/null
+transset-df -a 0.8 > /dev/null
 
 # Prompt
 PS1="\[$Red\]\u\[$BBlack\]@\[$BBlack\]\h \[$Yellow\]\w\[$BBlack\] \$\[$Color_Off\] "
