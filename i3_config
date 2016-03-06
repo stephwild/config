@@ -120,6 +120,7 @@ set $kc__x 53
 
 # Tabbed
 set $kc__w 25
+set $kc__t 28
 
 # Splitted
 set $kc__e 26
@@ -227,7 +228,7 @@ bindcode $mod+$kc__f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
 bindcode $mod+$kc__s layout stacking
-bindcode $mod+$kc__w layout tabbed
+bindcode $mod+$kc__t layout tabbed
 bindcode $mod+$kc__e layout toggle split
 
 # toggle tiling / floating
