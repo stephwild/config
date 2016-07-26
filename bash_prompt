@@ -1,0 +1,27 @@
+# ---------------------- #
+#  Human readable color  #
+# ---------------------- #
+
+Yellow='\e[0;33m'       # Yellow
+Red='\e[0;31m'          # Red
+BBlack='\e[1;30m'       # Bold Black
+Color_Off='\e[0m'       # Color Reset
+
+function hook_rv() {
+    RETVAL=$?
+
+    if [ $RETVAL -ne 0 ]; then
+        echo -e " ${Red}(${RETVAL})"
+    else
+        echo -e "$BBlack"
+    fi
+}
+
+LEFT_UPPER_COLOR="\[$Red\]\u\[$BBlack\]@\h"
+RIGHT_UPPER_COLOR="\[$Yellow\]\w\[$Color_Off\]"
+BLANK_UPPER="  ---------------------  "
+
+UPPER_LINE="${LEFT_UPPER_COLOR}${BLANK_UPPER}${RIGHT_UPPER_COLOR}"
+BOTTOM_LINE="\[$Yellow\][\A]\$(hook_rv) \$ \[$Color_Off\]"
+
+export PS1="${UPPER_LINE}\n${BOTTOM_LINE}"

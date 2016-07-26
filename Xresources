@@ -1,6 +1,77 @@
-!-------------------------------!
-!       xterm Resources         !
-!-------------------------------!
+!---------------------------!
+!       X Resources         !
+!---------------------------!
+ 
+! General options
+! ===============
+
+! Set how many lines you can scroll
+*saveLines: 4096
+
+! Color options
+! =============
+!
+! ------------------------------------------------------------------------------
+! --- Generated with 4bit Terminal Color Scheme Designer -----------------------
+! ------------------------------------------------------------------------------
+! --- http://ciembor.github.com/4bit -------------------------------------------
+! ------------------------------------------------------------------------------
+
+*background: black
+*foreground: white
+
+! --- standard colors ---
+
+! black
+*color0: #242424
+
+! bright_black
+*color8: #585858
+
+! red
+*color1: #803130
+
+! bright_red
+*color9: #be5351
+
+! green
+*color2: #308031
+
+! bright_green
+*color10: #51be53
+
+! yellow
+*color3: #7e8030
+
+! bright_yellow
+*color11: #bcbe51
+
+! blue
+*color4: #313080
+
+! bright_blue
+*color12: #5351be
+
+! magenta
+*color5: #80307e
+
+! bright_magenta
+*color13: #be51bc
+
+! cyan
+*color6: #307e80
+
+! bright_cyan
+*color14: #51bcbe
+
+! white
+*color7: #dbdbdb
+
+! bright_white
+*color15: #ffffff
+
+! Xterm options
+! =============
 
 ! Set TERM env
 xterm*termName: xterm-256color
@@ -8,27 +79,149 @@ xterm*termName: xterm-256color
 ! Config xterm to utf-8
 xterm*locale: true
 
-! Set how many lines you can scroll
-xterm*saveLines: 4096
-
-! Set toolbar if not set use <SHIFT> + <PAGE UP> / <SHIFT> + <PAGE DOWN>
-xterm*toolbar: true
-
 ! Remove black border
 xterm*borderWidth: 0
 
-! Color config
+! Urxvt options
+! =============
 
-xterm*foreground: white
-xterm*background: black
-
-!xterm*color0: rgb:28/28/28
-
-! begin color0 to color 15 : config 16 terminal colors
-
-!xterm*color15: rgb:b1/c2/d3
-
-! Set font type and size
-
-xterm*faceName: Liberation Mono:size=9:antialias=true
-xterm*font: 7x13
+!URxvt*rxvt-unicode
+!URxvt*options:
+!URxvt*Usage:
+!URxvt*
+!URxvt*where
+!URxvt*termName:
+!URxvt*geometry:
+!URxvt*chdir:
+!URxvt*reverseVideo:
+!URxvt*loginShell:
+!URxvt*multiClickTime:
+!URxvt*jumpScroll:
+!URxvt*skipScroll:
+!URxvt*pastableTabs:
+!URxvt*scrollstyle:
+URxvt*scrollBar: false
+!URxvt*scrollBar_right:
+!URxvt*scrollBar_floating:
+!URxvt*scrollBar_align:
+!URxvt*thickness:
+!URxvt*scrollTtyOutput:
+!URxvt*scrollTtyKeypress:
+!URxvt*scrollWithBuffer:
+!URxvt*inheritPixmap:
+!URxvt*transparent:
+!URxvt*tintColor:
+!URxvt*shading:
+!URxvt*blurRadius:
+!URxvt*fading:
+!URxvt*fadeColor:
+!URxvt*utmpInhibit:
+!URxvt*urgentOnBell:
+!URxvt*visualBell:
+!URxvt*mapAlert:
+!URxvt*meta8:
+!URxvt*mouseWheelScrollPage:
+!URxvt*tripleclickwords:
+!URxvt*insecure:
+!URxvt*cursorUnderline:
+!URxvt*cursorBlink:
+!URxvt*pointerBlank:
+!URxvt*background: black
+!URxvt*foreground: white
+!URxvt*color0:
+!URxvt*color1:
+!URxvt*color2:
+!URxvt*color3:
+!URxvt*color4:
+!URxvt*color5:
+!URxvt*color6:
+!URxvt*color7:
+!URxvt*color8:
+!URxvt*color9:
+!URxvt*color10:
+!URxvt*color11:
+!URxvt*color12:
+!URxvt*color13:
+!URxvt*color14:
+!URxvt*color15:
+!URxvt*colorBD:
+!URxvt*colorIT:
+!URxvt*colorUL:
+!URxvt*colorRV:
+!URxvt*underlineColor:
+!URxvt*scrollColor:
+!URxvt*troughColor:
+!URxvt*highlightColor:
+!URxvt*highlightTextColor:
+!URxvt*cursorColor:
+!URxvt*cursorColor2:
+!URxvt*pointerColor:
+!URxvt*pointerColor2:
+!URxvt*borderColor:
+!URxvt*iconFile:
+URxvt*font: xft:DejaVu Sans Mono:style=Book:size=11
+!URxvt*boldFont:
+!URxvt*italicFont:
+!URxvt*boldItalicFont:
+!URxvt*intensityStyles:
+!URxvt*inputMethod:
+!URxvt*preeditType:
+!URxvt*imLocale:
+!URxvt*imFont:
+!URxvt*title:
+!URxvt*iconName:
+!URxvt*saveLines:
+!URxvt*buffered:
+!URxvt*depth:
+!URxvt*visual:
+!URxvt*transient-for:
+!URxvt*override-redirect:
+!URxvt*hold:
+!URxvt*externalBorder:
+!URxvt*internalBorder:
+!URxvt*borderLess:
+!URxvt*lineSpace:
+!URxvt*letterSpace:
+!URxvt*skipBuiltinGlyphs:
+!URxvt*pointerBlankDelay:
+!URxvt*backspacekey:
+!URxvt*deletekey:
+!URxvt*print-pipe:
+!URxvt*modifier:
+!URxvt*cutchars:
+!URxvt*answerbackString:
+!URxvt*secondaryScreen:
+!URxvt*secondaryScroll:
+!URxvt*perl-lib:
+!URxvt*perl-eval:
+!URxvt*perl-ext-common:
+!URxvt*perl-ext:
+!URxvt*iso14755:
+!URxvt*iso14755_52:
+!URxvt*xrm:
+!URxvt*keysym.sym:
+!URxvt*background.border:
+!URxvt*background.expr:
+!URxvt*background.interval:
+!URxvt*bell-command:
+!URxvt*kuake.hotkey:
+!URxvt*matcher.button:
+!URxvt*matcher.launcher:
+!URxvt*matcher.launcher.*:
+!URxvt*matcher.pattern.*:
+!URxvt*matcher.rend.*:
+!URxvt*remote-clipboard.fetch:
+!URxvt*remote-clipboard.store:
+!URxvt*searchable-scrollback:
+!URxvt*selection-autotransform.*:
+!URxvt*selection-pastebin.cmd:
+!URxvt*selection-pastebin.url:
+!URxvt*selection.pattern-0:
+!URxvt*tab-bg:
+!URxvt*tab-fg:
+!URxvt*tabbar-bg:
+!URxvt*tabbar-fg:
+!URxvt*url-launcher:
+!URxvt*
+!URxvt*-help
+!URxvt*

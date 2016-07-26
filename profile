@@ -1,15 +1,7 @@
-# Change X keycode -> keysym mapping
-if [ -e ~/.Xmodmap ]; then
-    /usr/bin/xmodmap ~/.Xmodmap
-fi
-
 # No pop-up when using git for ssh passwd
 unset SSH_ASKPASS
 
-LOCAL_SCRIPT_DIR=~/.my_script
+USER_BIN_DIR=~/.user_bin
 
 # Add local script dir to PATH
-export PATH=${LOCAL_SCRIPT_DIR}:$PATH
-
-# Start composite manager to enable terminal transparency
-xcompmgr -c &
+export PATH=${USER_BIN_DIR}:$PATH

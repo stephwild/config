@@ -100,7 +100,13 @@ xrdb ~/.Xresources
 #=============#
 
 add_title "Add i3 files"
+
+add_directory ~/.i3
 cp -v i3_config ~/.i3/config
+
+echo "Add i3 scripts"
+add_directory ~/.i3/script
+cp -rv i3_script/* ~/.i3/script/
 
 #=============#
 #    Other

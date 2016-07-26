@@ -1,0 +1,3 @@
+#!/bin/sh
+
+feh --randomize --no-fehbg --image-bg black --bg-max ~/.img/wallpaper

@@ -25,13 +25,13 @@ SCRIPT_DIR=~/.my_script
 
 # You want Trash functionality like Windows... Use bin not rm
 if [ -f "$SCRIPT_DIR/bin_emulator.sh" ]; then
-    alias bin='bin_emulator.sh $@'
+    alias bin='bin_emulator.sh'
 else
     alias bin='mv -t ~/.Trash'
 fi
 
 # Alias for colors
-LS_OPTIONS='-h -F --color=auto'
+export LS_OPTIONS='-h -F --color=auto'
 alias ls='ls $LS_OPTIONS'
 alias ll='ls -l $LS_OPTIONS'
 
@@ -54,16 +54,26 @@ alias gomovie='cd /data/Video/ && setxkbmap fr bepo'
 
 # Other alias
 alias du='du -h'
-alias i3lock='i3lock -d -e -i /data/Img/toy_story_that_time_forgot-wide.png'
+alias i3lock='i3lock -d -e -i ~/.img/lockscreen'
 alias manfr='LANGUAGE=fr_FR.UTF-8 man'
 alias vimr='vim -R'
 alias info='info --vi-keys'
 
 function func_append { echo "$1" >> "$2"; }
-alias append='func_append $@'
+alias append='func_append'
 
-# Set transparency to 20 %, work only if a composite manager is running
-transset-df -a 0.8 > /dev/null
+# Temporary alias
+alias startx='sudo dhcpcd wlp7s0 && startx'
 
-# Prompt
-PS1="\[$Red\]\u\[$BBlack\]@\[$BBlack\]\h \[$Yellow\]\w\[$BBlack\] \$\[$Color_Off\] "
+if [ -n "$DISPLAY" ]; then
+    # Set actual window transparency to 20 %
+    # This only work if a composite manager is running (xcompmgr)
+    transset-df -a 0.7 > /dev/null
+fi
+
+
+if [ -f ~/.bash_prompt ]; then
+    source ~/.bash_prompt
+else
+    PS1="\[$Red\]\u\[$BBlack\]@\h \[$Yellow\]\w\[$BBlack\] \$\[$Color_Off\] "
+fi
