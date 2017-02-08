@@ -40,15 +40,14 @@ echo "# Add vim ftdetect files" # For filetype detection
 echo
 
 add_directory ~/.vim/ftdetect
-cp -v vim/ftdetect/markdown.vim ~/.vim/ftdetect/
-cp -v vim/ftdetect/aasm.vim vim/ftdetect/tiger.vim ~/.vim/ftdetect
+cp -v vim/ftdetect/* ~/.vim/ftdetect/
 
 echo
 echo "# Add vim syntax files" # Detect special keywork in files
 echo
 
 add_directory ~/.vim/syntax
-cp -v vim/syntax/aasm.vim vim/syntax/tiger.vim ~/.vim/syntax
+cp -v vim/syntax/* ~/.vim/syntax/
 
 echo
 echo "# Add YCM semantic completion" # Autocomplete plugin
@@ -61,7 +60,7 @@ echo "# Add UltiSnips snippets"  # Snippets plugin
 echo
 
 add_directory ~/.vim/UltiSnips
-cp -v UltiSnips/c.snippets UltiSnips/make.snippets UltiSnips/cpp.snippets ~/.vim/UltiSnips/
+cp -v vim/UltiSnips/* ~/.vim/UltiSnips/
 
 #=====================#
 #     Emacs files
@@ -76,6 +75,10 @@ cp -v emacs ~/.emacs
 
 add_title "Add bash files"
 cp -v bashrc ~/.bashrc
+cp -v bash_prompt ~/.bash_prompt
+
+cp -v profile ~/.profile
+cp -v bash_profile ~/.bash_profile
 
 #====================#
 #     Git files
@@ -90,10 +93,15 @@ cp -v gitconfig ~/.gitconfig
 
 add_title "Setup X configuration"
 cp -v Xresources ~/.Xresources
+cp -v Xmodmap ~/.Xmodmap
 
 echo
 echo "Load new Xresources"
 xrdb ~/.Xresources
+
+echo
+echo "Add X startup configuration"
+cp -v xinitrc ~/.xinitrc
 
 #=============#
 #     i3
@@ -114,6 +122,8 @@ cp -rv i3_script/* ~/.i3/script/
 
 add_title "Other config/setup"
 add_directory ~/.Trash
+
+cp -v fehbg ~/.fehbg
 
 echo "Config made by stephwild"
 echo "Please check 'https://github.com/stephwild' for more"
