@@ -159,7 +159,7 @@ URxvt*scrollBar: false
 !URxvt*pointerColor2:
 !URxvt*borderColor:
 !URxvt*iconFile:
-URxvt*font: xft:DejaVu Sans Mono:style=Book:size=11
+URxvt*font: xft:DejaVu Sans Mono:style=Book:size=12
 !URxvt*boldFont:
 !URxvt*italicFont:
 !URxvt*boldItalicFont:

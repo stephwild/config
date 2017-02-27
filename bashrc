@@ -21,7 +21,7 @@ Color_Off='\e[0m'       # Color Reset
 # Add some mistake tolerance
 alias cd..='cd ..'
 
-SCRIPT_DIR=~/.my_script
+SCRIPT_DIR=~/.user_bin
 
 # You want Trash functionality like Windows... Use bin not rm
 if [ -f "$SCRIPT_DIR/bin_emulator.sh" ]; then
@@ -62,11 +62,8 @@ alias info='info --vi-keys'
 function func_append { echo "$1" >> "$2"; }
 alias append='func_append'
 
-# Temporary alias
-alias startx='sudo dhcpcd wlp7s0 && startx'
-
 if [ -n "$DISPLAY" ]; then
-    # Set actual window transparency to 20 %
+    # Set window transparency.
     # This only work if a composite manager is running (xcompmgr)
     transset-df -a 0.7 > /dev/null
 fi

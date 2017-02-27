@@ -23,6 +23,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'SirVer/ultisnips'
+Plugin 'nanotech/jellybeans.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()           " required
