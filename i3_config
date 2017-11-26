@@ -406,4 +406,4 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc $brightness_ste
 bindsym Print exec scrot ~/.img/screenshot/'screenshot_$wx$h_%d-%m-%Y_%T.png'
 
 # Keymap switch shortcut
-bindcode $mod+Shift+$kc__i exec ~/.i3/script/switch_keymap && killall -SIGUSR1 i3status
+bindcode $mod+Shift+$kc__i exec ~/.i3/script/layout_switch.sh && killall -SIGUSR1 i3status
