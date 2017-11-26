@@ -27,9 +27,12 @@ import os.path
 
 def get_keymap():
     """ Get the current keymap """
-    keymap = subprocess.check_output([os.path.expanduser("~/.i3/script/get_keymap")])
-    return bytes.decode(keymap)
 
+    keymap_info_out = subprocess.check_output(('setxkbmap', '-query'))
+    keymap_info = keymap_info_out.decode('ascii')
+    layout_or_variant = keymap_info.split('\n')[-2]
+
+    return layout_or_variant.split(' ')[-1]
 
 def print_line(message):
     """ Non-buffered printing to stdout. """

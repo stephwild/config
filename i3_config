@@ -391,9 +391,9 @@ exec --no-startup-id debuglog on
 set $pulse_step 1
 
 # PulseAudio keybinding for Sound Up/Down and Mute
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +$pulse_step% && killall -SIGUSR1 i3status¬
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -$pulse_step% && killall -SIGUSR1 i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +$pulse_step% && pkill -SIGUSR1 i3status¬
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -$pulse_step% && pkill -SIGUSR1 i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -SIGUSR1 i3status
 
 # Brightness step
 set $brightness_step 5
@@ -406,4 +406,4 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc $brightness_ste
 bindsym Print exec scrot ~/.img/screenshot/'screenshot_$wx$h_%d-%m-%Y_%T.png'
 
 # Keymap switch shortcut
-bindcode $mod+Shift+$kc__i exec ~/.i3/script/layout_switch.sh && killall -SIGUSR1 i3status
+bindcode $mod+Shift+$kc__i exec ~/.i3/script/layout_switch.sh && pkill -SIGUSR1 i3status
